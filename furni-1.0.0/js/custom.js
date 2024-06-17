@@ -69,5 +69,24 @@
 	};
 	sitePlusMinus();
 
+	formulario.addEventListener('submit', (eventSubmit) => {
+	
+		eventSubmit.preventDefault() 
+
+	})
+
+	myform.addEventListener('submit', (eventSubmit) => {
+
+        eventSubmit.preventDefault()
+
+        if (form_name.value.length == 0) {
+            alert("Nombre requerido")
+            form_name.focus()
+            return;
+        }
+
+        ...
+
+})
 
 })()
