@@ -30,3 +30,35 @@ window.onclick = function(event) {
     }
 };
 
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var nombre = document.getElementById('nombre').value;
+    var email = document.getElementById('email').value;
+    var mensaje = document.getElementById('textarea').value;
+
+    var data = {
+        nombre: nombre,
+        email: email,
+        mensaje: mensaje
+    };
+
+    fetch('https://fir-6d6e1-default-rtdb.firebaseio.com/coleccion/-O-1YtQ2Ybz8cVnNp8On/coleccion.json', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Success:', data);
+        alert('Mensaje enviado correctamente');
+        document.getElementById('contactForm').reset();
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        alert('Error al enviar el mensaje');
+    });
+});
+

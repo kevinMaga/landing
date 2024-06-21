@@ -1226,7 +1226,7 @@ blockquote .author-info {
   justify-content: center;
   align-self: flex-start;
   font-family: inherit;
-  color: #717171;
+  color: #ffffff;
   font-weight: 600;
   width: 40%;
   background: #313131;
@@ -1242,6 +1242,7 @@ blockquote .author-info {
 .form-container .form-submit-btn:hover {
   background-color: #fff;
   border-color: #fff;
+  color: #313131;
 }
 
 .form-submit-btn{
