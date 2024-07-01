@@ -32,7 +32,7 @@ let loaded = ( eventLoaded ) => {
             mensaje: mensaje,
         };
     
-        fetch("https://fir-6d6e1-default-rtdb.firebaseio.com/coleccion.json", {
+        fetch("https://equipos-a240f-default-rtdb.firebaseio.com/equipos.json", {
             method: 'POST',
             body: JSON.stringify(datos),
             headers: {
@@ -89,31 +89,43 @@ window.onclick = function (event) {
     }
 };
 
-/*
-document.getElementById('formulario').addEventListener('submit', (event) => {
-    event.preventDefault();
-    const nombre = document.getElementById('nombre').value;
-    const email = document.getElementById('email').value;
-    const mensaje = document.getElementById('textarea').value;
-
-    const datos = {
-        nombre: nombre,
-        email: email,
-        mensaje: mensaje // Cambiado textarea por mensaje
-    };
-
-    fetch('https://fir-6d6e1-default-rtdb.firebaseio.com/coleccion.json', { // Cambia la URL para agregar .json
-        method: 'POST',
-        body: JSON.stringify(datos),
-        headers: {
-            'Content-Type': 'application/json'
+async function obtenerDatos() {
+    const url = "https://equipos-a240f-default-rtdb.firebaseio.com/equipos.json";
+    try {
+        const respuesta = await fetch(url);
+        if (!respuesta.ok) {
+            console.error("Error", respuesta.status);
+            return;
         }
-    })
-    .then(respuesta => respuesta.json())
-    .then(datos => {
-        console.log(datos); // Imprimir la respuesta del servidor
-    })
-    .catch(error => console.error(error));
-});*/
+        const datosJSON = await respuesta.json();
+        const mapaJuegosFav = new Map();
+        
+        for (const key in datosJSON) {
+            const { nombre, email, mensaje } = datosJSON[key];
+            mapaJuegosFav.set(key, { nombre, email, mensaje });
+        }
 
+        // Obtener referencia al cuerpo de la tabla
+        const tableBody = document.getElementById('tablebody');
+
+        // Limpiar cualquier fila existente
+        tableBody.innerHTML = '';
+
+        // Llenar la tabla con datos
+        mapaJuegosFav.forEach((value, key) => {
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${value.nombre}</td>
+                <td>${value.email}</td>
+                <td>${value.mensaje}</td>
+            `;
+            tableBody.appendChild(newRow);
+        });
+    } catch (error) {
+        console.error("Error al obtener los datos:", error);
+    }
+}
+
+// Llamar a obtenerDatos al cargar la página para mostrar los datos existentes
+document.addEventListener("DOMContentLoaded", obtenerDatos);
 
