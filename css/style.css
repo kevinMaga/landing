@@ -1269,3 +1269,191 @@ blockquote .author-info {
   gap: 10px;
 }
 
+/* Estilos generales para dispositivos móviles */
+@media (max-width: 767px) {
+  .navbar-brand {
+      font-size: 1.5rem;
+  }
+
+  .custom-navbar-nav {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .hero {
+      padding: 2rem 1rem;
+      text-align: center;
+  }
+
+  .hero h1 {
+      font-size: 1.5rem;
+  }
+
+  .hero-img-wrap img {
+      width: 100%;
+      height: auto;
+  }
+
+  .testimonial-section {
+      padding: 2rem 1rem;
+  }
+
+  .product-section {
+      padding: 2rem 1rem;
+  }
+
+  .product-item {
+      margin-bottom: 2rem;
+  }
+
+  .blog-section {
+      padding: 2rem 1rem;
+  }
+
+  .post-entry {
+      margin-bottom: 2rem;
+  }
+
+  .footer-section {
+      padding: 2rem 1rem;
+  }
+
+  .form-container {
+      padding: 2rem 1rem;
+  }
+
+  .form-group {
+      margin-bottom: 1rem;
+  }
+
+  .btn-aling {
+      text-align: center;
+  }
+}
+
+/* Estilos para tabletas */
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero {
+      padding: 3rem 1.5rem;
+  }
+
+  .testimonial-section {
+      padding: 3rem 1.5rem;
+  }
+
+  .product-section {
+      padding: 3rem 1.5rem;
+  }
+
+  .blog-section {
+      padding: 3rem 1.5rem;
+  }
+
+  .footer-section {
+      padding: 3rem 1.5rem;
+  }
+
+  .form-container {
+      padding: 3rem 1.5rem;
+  }
+}
+
+/* Estilos específicos */
+.container2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/svgs/solid/bars.svg');
+}
+
+.intro-excerpt h1 {
+  font-size: 2rem;
+}
+
+.intro-excerpt span {
+  display: block;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.testimonial-block1 {
+  padding: 2rem 0;
+}
+
+.parrafo1 {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.btnContatanos {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.product-title,
+.combinacion {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.decoracion {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.bloqueContacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.bloqueContacto .info {
+  text-align: center;
+}
+
+.bloqueContacto .form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-submit-btn {
+  background-color: #333;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+
